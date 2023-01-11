@@ -4,25 +4,26 @@
     {
         static void Main(string[] args)
         {
-            int sum = 0, n;
-            Console.WriteLine("***Finding Perfect Number***");
-            Console.WriteLine("Enter the Number");
-            int num = Convert.ToInt32(Console.ReadLine());
-            n = num;
-            for (int i = 1; i < num; i++)
+            int count = 0;
+            Console.WriteLine("***PrimeNumber***");
+            Console.WriteLine("Enter the number");
+            int Num = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 2; i < Num; i++)
             {
-                if (num % i == 0)
+                if (Num % i == 0)
                 {
-                    sum = sum + i;
+                    count++;
                 }
+
             }
-            if (sum == n)
+            if (count == 2)
             {
-                Console.WriteLine("Entered number is a perfect number");
+                Console.WriteLine("The number is not a Prime Number");
             }
             else
             {
-                Console.WriteLine("Entered number is not a perfect number");
+                Console.WriteLine("It is Prime Number");
             }
         }
 
