@@ -4,27 +4,17 @@
     {
         static void Main(string[] args)
         {
-            int count = 0;
-            Console.WriteLine("***PrimeNumber***");
-            Console.WriteLine("Enter the number");
-            int Num = Convert.ToInt32(Console.ReadLine());
-
-            for (int i = 2; i < Num; i++)
+            Console.WriteLine("***ReverseNumber***");
+            Console.WriteLine("Enter the Number to check Reverse number");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            int Reverse = 0;
+            while (Number != 0)
             {
-                if (Num % i == 0)
-                {
-                    count++;
-                }
-
+                int remainder = Number % 10;
+                Reverse = (Reverse * 10) + remainder;
+                Number = Number / 10;
             }
-            if (count == 2)
-            {
-                Console.WriteLine("The number is not a Prime Number");
-            }
-            else
-            {
-                Console.WriteLine("It is Prime Number");
-            }
+            Console.WriteLine(Reverse + " is reverse number");
         }
 
     }
