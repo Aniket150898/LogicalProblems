@@ -4,19 +4,27 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("***FibseriesCode***");
-            int a = 0, b = 1, c;
-            Console.WriteLine("Enter the number:");
-            int Num = Convert.ToInt32(Console.ReadLine());
-            Console.Write(a + " " + b + " ");
-
-            for ( int i = 2; i < Num; i++)
+            int sum = 0, n;
+            Console.WriteLine("***Finding Perfect Number***");
+            Console.WriteLine("Enter the Number");
+            int num = Convert.ToInt32(Console.ReadLine());
+            n = num;
+            for (int i = 1; i < num; i++)
             {
-                c = a + b;
-                Console.Write(c + " ");
-                a = b;
-                b = c;
+                if (num % i == 0)
+                {
+                    sum = sum + i;
+                }
+            }
+            if (sum == n)
+            {
+                Console.WriteLine("Entered number is a perfect number");
+            }
+            else
+            {
+                Console.WriteLine("Entered number is not a perfect number");
             }
         }
+
     }
 }
