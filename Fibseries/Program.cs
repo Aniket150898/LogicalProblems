@@ -1,21 +1,37 @@
-﻿namespace Fibseries
+﻿using System.Diagnostics;
+
+namespace Fibseries
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("***ReverseNumber***");
-            Console.WriteLine("Enter the Number to check Reverse number");
-            int Number = Convert.ToInt32(Console.ReadLine());
-            int Reverse = 0;
-            while (Number != 0)
-            {
-                int remainder = Number % 10;
-                Reverse = (Reverse * 10) + remainder;
-                Number = Number / 10;
-            }
-            Console.WriteLine(Reverse + " is reverse number");
+            Console.WriteLine("***CoupenCodeGenerator***");
+            Console.Write("Enter the number of Distinct Coupon number you want : ");
+            int N = Convert.ToInt32(Console.ReadLine());
+            CouponNumberGenerator(N);
         }
-
+        public static void CouponNumberGenerator(int N)
+        {
+            int[] coupon = new int[N];
+            Random random = new Random();
+            for (int i = 0; i < N; i++)
+            {
+                coupon[i] = random.Next(100, 1000);
+                int check = coupon[i];
+                for (int j = i - 1; j >= 0; j--)
+                {
+                    if (coupon[i] == coupon[j])
+                    {
+                        i--;
+                    }
+                }
+            }
+            for (int i = 0; i < N; i++)
+            {
+                Console.WriteLine("Coupon " + (i + 1) + " : " + coupon[i]);
+            }
+        }
+     
     }
 }
